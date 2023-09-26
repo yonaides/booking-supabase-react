@@ -1,11 +1,10 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import { HiOutlineHome } from "react-icons/hi2";
-import { HiCalendarDays } from "react-icons/hi2";
-import { HiOutlineHomeModern } from "react-icons/hi2";
-import { HiOutlineUsers } from "react-icons/hi2";
-import { HiOutlineCog6Tooth } from "react-icons/hi2";
-
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { HiOutlineHome } from 'react-icons/hi2';
+import { HiCalendarDays } from 'react-icons/hi2';
+import { HiOutlineHomeModern } from 'react-icons/hi2';
+import { HiOutlineUsers } from 'react-icons/hi2';
+import { HiOutlineCog6Tooth } from 'react-icons/hi2';
 
 const NavList = styled.ul`
   display: flex;
@@ -52,33 +51,40 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-
 function MainNav() {
   return (
     <nav>
       <NavList>
         <li>
-          <StyledNavLink to="/dashboard"> <HiOutlineHome /> <span> Home </span> </StyledNavLink>
+          <StyledNavLink to='/dashboard'>
+            <HiOutlineHome /> <span> Home </span>{' '}
+          </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/bookings">  <HiCalendarDays /> <span> Bookings </span>  </StyledNavLink>
+          <StyledNavLink to='/bookings'>
+            <HiCalendarDays /> <span> Bookings </span>{' '}
+          </StyledNavLink>
         </li>
 
         <li>
-          <StyledNavLink to="/cabis"> <HiOutlineHomeModern /> <span> Cabis </span> </StyledNavLink>
+          <StyledNavLink to='/cabins'>
+            <HiOutlineHomeModern /> <span> Cabins </span>{' '}
+          </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/users">  <HiOutlineUsers /> <span> Users </span>  </StyledNavLink>
+          <StyledNavLink to='/users'>
+            <HiOutlineUsers /> <span> Users </span>{' '}
+          </StyledNavLink>
         </li>
 
         <li>
-          <StyledNavLink to="/setting"> <HiOutlineCog6Tooth /> <span> Settings </span> </StyledNavLink>
+          <StyledNavLink to='/setting'>
+            <HiOutlineCog6Tooth /> <span> Settings </span>{' '}
+          </StyledNavLink>
         </li>
-
       </NavList>
-
     </nav>
-  )
+  );
 }
 
-export default MainNav
+export default MainNav;

@@ -1,15 +1,24 @@
 import supabase, { supabaseUrl } from './supabase';
 import { toast } from 'react-hot-toast';
+import { PAGE_SIZE } from '../utils/constans';
 
-export async function getCabins() {
-  const { data, error } = await supabase.from('cabins').select('*');
+export async function getCabins({ page }) {
+  let query = supabase.from('cabins').select('*', { count: 'exact' });
+
+  if (page) {
+    const from = (page - 1) * PAGE_SIZE;
+    const to = from + PAGE_SIZE - 1;
+    query = query.range(from, to);
+  }
+
+  const { data, error, count } = await query;
 
   if (error) {
     toast.error(error);
     throw new Error('Cabins could not be loaded');
   }
 
-  return data;
+  return { data, error, count };
 }
 
 export async function createCabin(newCabin, id) {
