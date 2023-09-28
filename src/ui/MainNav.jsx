@@ -5,6 +5,7 @@ import { HiCalendarDays } from 'react-icons/hi2';
 import { HiOutlineHomeModern } from 'react-icons/hi2';
 import { HiOutlineUsers } from 'react-icons/hi2';
 import { HiOutlineCog6Tooth } from 'react-icons/hi2';
+import Uploader from '../data/Uploader';
 
 const NavList = styled.ul`
   display: flex;
@@ -81,6 +82,9 @@ function MainNav() {
           <StyledNavLink to='/setting'>
             <HiOutlineCog6Tooth /> <span> Settings </span>{' '}
           </StyledNavLink>
+        </li>
+        <li>
+          <Uploader />
         </li>
       </NavList>
     </nav>
