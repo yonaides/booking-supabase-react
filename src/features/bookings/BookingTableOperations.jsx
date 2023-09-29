@@ -1,4 +1,4 @@
-import SortBy from '../../ui/Sortby';
+import SortBy from '../../ui/SortBy';
 import Filter from '../../ui/Filter';
 import TableOperations from '../../ui/TableOperations';
 
