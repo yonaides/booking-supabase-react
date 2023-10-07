@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "./Button";
 import Heading from "./Heading";
 
-const StyledConfirmDelete = styled.div`
+const StyledConfirmYesNo = styled.div`
   width: 40rem;
   display: flex;
   flex-direction: column;
@@ -20,14 +20,11 @@ const StyledConfirmDelete = styled.div`
   }
 `;
 
-function ConfirmDelete({ resourceName, onConfirm, disabled, onCloseModal }) {
+function ConfirmYesNo({ disabled, onLogout, onCloseModal }) {
   return (
-    <StyledConfirmDelete>
-      <Heading as="h3">Delete {resourceName}</Heading>
-      <p>
-        Are you sure you want to delete this {resourceName} permanently? This
-        action cannot be undone.
-      </p>
+    <StyledConfirmYesNo>
+      <Heading as="h3">Are you sure close? </Heading>
+      <p>Do you want exit?</p>
 
       <div>
         <Button
@@ -35,14 +32,14 @@ function ConfirmDelete({ resourceName, onConfirm, disabled, onCloseModal }) {
           disabled={disabled}
           onClick={onCloseModal}
         >
-          Cancel
+          No
         </Button>
-        <Button variation="danger" disabled={disabled} onClick={onConfirm}>
-          Delete
+        <Button variation="danger" disabled={disabled} onClick={onLogout}>
+          Yes
         </Button>
       </div>
-    </StyledConfirmDelete>
+    </StyledConfirmYesNo>
   );
 }
 
-export default ConfirmDelete;
+export default ConfirmYesNo;
